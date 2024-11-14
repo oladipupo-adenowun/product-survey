@@ -10,6 +10,7 @@ function submitFeedback(){
     const designation = document.getElementById("designation").value;
     const productType = document.getElementById("productType").value;
     const feedbackText = document.getElementById("feedbackText").value;
+    const experienceText = document.getElementById("experienceText").value;
 
     /*place the values in the information panel*/
     document.getElementById("userName").innerHTML = name;
@@ -19,13 +20,14 @@ function submitFeedback(){
     document.getElementById("userDesignation").innerHTML = designation;
     document.getElementById("userProductChoice").innerHTML = productType;
     document.getElementById("userFeedback").innerHTML = feedbackText;
+    document.getElementById("userExperience").innerHTML = experienceText;
 
     /*make information panel active*/
     document.getElementById("userInfo").style.display = 'block';
 }
 
 const submitBtn = document.getElementById("submitBtn");
-submitBtn.addEventListener('submit',()=>submitFeedback());
+submitBtn.onclick = submitFeedback;
 /*also process when enter button is pressed*/
 document.addEventListener('keydown',function(event){
     if(event.key == 'Enter'){
